@@ -12,6 +12,8 @@ export interface TicketUpdatedEvent {
     //because an ordered ticket could be canceled, then we need to update the ticket
     //by incrementing verson and orderId to null/undefined, since version chnaged every
     //service who listen order updated need to know ticket property changed
-    orderId: string;
+    //? mark means typescript will count it as optional, it may provided or not,
+    //because there might be some ticket update unrelated to order services.
+    orderId?: string;
   };
 }
